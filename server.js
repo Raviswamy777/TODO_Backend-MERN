@@ -8,8 +8,9 @@ const Todo = require("./todo.model");
 const todoRoutes = express.Router();
 
 async function connectToMongodb(){
-    await mongoose.connect("mongodb+srv://raviswamyp:fEENJzkYCQEzw9Gs@cluster0.cv9low3.mongodb.net/?retryWrites=true&w=majority",)
-    {useNewUrlParser: true};
+    await mongoose.connect("mongodb+srv://raviswamyp:fEENJzkYCQEzw9Gs@cluster0.cv9low3.mongodb.net/?retryWrites=true&w=majority",
+    {   useUnifiedTopology:true, 
+        useNewUrlParser: true});
     console.log("connected to Mongodb");
 }
 
